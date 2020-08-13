@@ -11,3 +11,40 @@
   margin: 0 10px;
   color: #fff;
 }
+.banner__wrapper {
+  background: linear-gradient(rgba(255, 0, 0, 0.45), rgba(0, 0, 0, 0.7)),
+    url("./images/bannerImg.jpg");
+  position: relative;
+  display: flex;
+  justify-content: center;
+  min-height: calc(100vh - 140px);
+  /* background-blend-mode: multiply; */
+  color: #fff;
+  flex-direction: column;
+  align-items: center;
+}
+.banner__wrapper h2,
+.banner__wrapper p {
+  text-align: center;
+  align-items: center;
+}
+.banner__wrapper h2 {
+  font-size: 38px;
+  font-weight: 800;
+}
+.banner__wrapper p {
+  font-size: 24px;
+  font-weight: 200;
+}
+.btn-primary {
+  display: block;
+  position: relative;
+  color: #fff;
+  border: 1px solid #fefefe;
+  border-radius: 5px;
+  text-align: center;
+  width: 10%;
+  text-decoration: none;
+  margin: 10px 0;
+  padding: 10px;
+}
