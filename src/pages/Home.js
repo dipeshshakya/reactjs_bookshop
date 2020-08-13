@@ -5,10 +5,12 @@ function Home() {
   return (
     <>
       <div className="main__wrapper">
-        <Banner
-          title="Experience the collections of beautiful stories"
-          subtitle="Enjoy the first month free subscription"
-        />
+        <div className="banner__section">
+          <Banner
+            title="Experience the collections of beautiful stories"
+            subtitle="Enjoy the first month free subscription"
+          />
+        </div>
       </div>
     </>
   );

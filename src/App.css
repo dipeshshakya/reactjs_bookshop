@@ -11,28 +11,45 @@
   margin: 0 10px;
   color: #fff;
 }
+@keyframes slide {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-1692px, 0, 0); /* The image width */
+  }
+}
+.banner__section {
+  overflow: hidden;
+}
 .banner__wrapper {
   background: linear-gradient(rgba(255, 0, 0, 0.45), rgba(0, 0, 0, 0.7)),
-    url("./images/bannerImg.jpg");
-  position: relative;
+    url("./images/bannerImg.jpg") repeat-x;
   display: flex;
-  justify-content: center;
-  min-height: calc(100vh - 140px);
-  /* background-blend-mode: multiply; */
-  color: #fff;
+  width: 5076px;
+  min-height: calc(100vh - 60px);
+  animation: slide 60s linear infinite;
+}
+.banner__content {
+  position: fixed;
+  top: 50%;
+  width: 100%;
+  display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  color: #fff;
+  margin: 0 auto;
 }
-.banner__wrapper h2,
-.banner__wrapper p {
+.banner__content h2,
+.banner__content p {
   text-align: center;
-  align-items: center;
 }
-.banner__wrapper h2 {
+.banner__content h2 {
   font-size: 38px;
   font-weight: 800;
 }
-.banner__wrapper p {
+.banner__content p {
   font-size: 24px;
   font-weight: 200;
 }
