@@ -1,0 +1,13 @@
+* {
+  margin: 0;
+}
+.navbar__link {
+  display: flex;
+  justify-content: flex-end;
+}
+.navbar__link a {
+  list-style: none;
+  text-decoration: none;
+  margin: 0 10px;
+  color: #fff;
+}
