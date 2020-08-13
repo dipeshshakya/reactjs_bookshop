@@ -1,9 +1,11 @@
 import React from 'react'
+import PageTitle from "../components/PageTitle";
 
 function Product() {
     return (
         <div>
-            product
+                  <PageTitle title="product" />
+
         </div>
     )
 }

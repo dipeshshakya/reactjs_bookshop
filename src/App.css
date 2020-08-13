@@ -65,3 +65,15 @@
   margin: 10px 0;
   padding: 10px;
 }
+.title__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0;
+  text-transform: uppercase;
+}
+.title__wrapper a {
+  list-style: none;
+  text-decoration: none;
+}

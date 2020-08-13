@@ -1,9 +1,10 @@
 import React from 'react'
+import PageTitle from "../components/PageTitle";
 
 function Checkout() {
     return (
         <div>
-            checkout
+      <PageTitle title="Checkout" />
         </div>
     )
 }

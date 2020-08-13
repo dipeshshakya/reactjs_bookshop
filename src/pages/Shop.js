@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import PageTitle from "../components/PageTitle";
 
 function Shop() {
-    return (
-        <div>
-            shop
-        </div>
-    )
+  return (
+    <div>
+      <PageTitle title="shop" />
+    </div>
+  );
 }
 
-export default Shop
+export default Shop;
