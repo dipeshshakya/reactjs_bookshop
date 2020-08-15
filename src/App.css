@@ -77,3 +77,11 @@
   list-style: none;
   text-decoration: none;
 }
+.productSearch__wrapper {
+  padding: 20px;
+}
+.productSearch__wrapper form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

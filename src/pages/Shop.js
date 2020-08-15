@@ -7,23 +7,29 @@ import products from "../data.js";
 import Grid from "@material-ui/core/Grid";
 
 function Shop() {
-  const user = useContext(MyContext);
-  console.log(user);
+  const books = useContext(MyContext);
+  console.log(books);
   return (
     <>
       <div>
         <PageTitle title="shop" />
       </div>
-      <ProductSearch />
-      <div className="productList__wrapper">
-        <Grid container>
-          {products.map((product) => (
-            <Grid item xs={4} sm={6} md={4}>
-              <ProductList product={product} key={product.id} />
-            </Grid>
-          ))}
+      <Grid container>
+        <Grid item xs>
+          <ProductSearch />
         </Grid>
-      </div>
+        <Grid item xs={8}>
+          <div className="productList__wrapper">
+            <Grid container>
+              {products.map((product) => (
+                <Grid item xs={4} sm={6} md={4}>
+                  <ProductList product={product} key={product.id} />
+                </Grid>
+              ))}
+            </Grid>
+          </div>
+        </Grid>
+      </Grid>
     </>
   );
 }
