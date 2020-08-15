@@ -1,13 +1,14 @@
-import React from 'react'
+import React from "react";
 import PageTitle from "../components/PageTitle";
+import products from "../data.js";
 
 function Product() {
-    return (
-        <div>
-                  <PageTitle title="product" />
-
-        </div>
-    )
+  console.log(products);
+  return (
+    <div>
+      <PageTitle title="product" />
+    </div>
+  );
 }
 
-export default Product
+export default Product;
