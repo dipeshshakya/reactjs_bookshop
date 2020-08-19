@@ -24,9 +24,9 @@ const useStyles = makeStyles({
     marginBottom: 12,
   },
 });
-function Book(props) {
+function Book({ book }) {
   const classes = useStyles();
-  const { id, name, author, img, description, price } = props;
+  const { id, name, author, img, description, price } = book;
   return (
     <Grid item xs>
       <Card className={classes.root} id={id}>
