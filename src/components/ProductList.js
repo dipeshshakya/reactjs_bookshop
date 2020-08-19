@@ -8,7 +8,6 @@ import Grid from "@material-ui/core/Grid";
 function ProductList() {
   const books = useContext(ProductContext);
 
-  // console.log(books);
   return (
     <div className="ProductList__list">
       {books.map((item) => {

@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
 import products from "./data.js";
-export const ProductContext = createContext();
+export const ProductContext = createContext({});
 
 export const ProviderContext = (props) => {
   const [books, setBooks] = useState([]);
@@ -8,12 +8,11 @@ export const ProviderContext = (props) => {
     setBooks(...books, products);
   }, []);
 
-  const getSingleBook = (slug) => {
-    let tempBook = books;
-    const bookFound = tempBook.find((book) => book.slug === slug);
-    return bookFound;
-  };
-
+  // const getSingleBook = (slug) => {
+  //   let tempBook = books;
+  //   const bookFound = tempBook.find((book) => book.slug === slug);
+  //   return bookFound;
+  // };
   return (
     <ProductContext.Provider value={books}>
       {props.children}

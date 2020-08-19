@@ -3,7 +3,7 @@ import React from "react";
 function ProductSearch() {
   return (
     <div className="productSearch__wrapper">
-      <form action="">
+      {/* <form action="">
         <input type="text" placeholder="Keyword,author,title" />
         <select name="" id="">
           <option>category1</option>
@@ -21,7 +21,7 @@ function ProductSearch() {
           <option>category1</option>
           <option>category2</option>
         </select>
-      </form>
+      </form> */}
     </div>
   );
 }

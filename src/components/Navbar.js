@@ -10,7 +10,7 @@ function Navbar() {
           <Link to="/">Home</Link>
           <Link to="/Shop">Shop</Link>
           <Link to="/Checkout">Checkout</Link>
-          <Link to="/Product">Product</Link>
+          <Link to="/Book:slug">Product</Link>
         </Toolbar>
       </AppBar>
     </div>

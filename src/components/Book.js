@@ -33,7 +33,7 @@ function Book({ book }) {
   const { id, name, author, img, description, price, slug } = book;
   return (
     <div className={classes.root}>
-      <Paper className={classes.paper}>
+      <Paper className={classes.paper} id={id}>
         <Grid container spacing={2}>
           <Grid item>
             <ButtonBase className={classes.image}>
