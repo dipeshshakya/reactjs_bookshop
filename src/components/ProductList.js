@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { ProductContext } from "../MyContext";
 import Book from "./Book";
+import Grid from "@material-ui/core/Grid";
+
 // import data from "../data.js";
 
 function ProductList() {
@@ -10,7 +12,11 @@ function ProductList() {
   return (
     <div className="ProductList__list">
       {books.map((item) => {
-        return <Book book={item} key={item.id} />;
+        return (
+          <Grid item>
+            <Book book={item} key={item.id} />
+          </Grid>
+        );
       })}
     </div>
   );
