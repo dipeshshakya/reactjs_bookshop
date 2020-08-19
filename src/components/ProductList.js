@@ -1,9 +1,11 @@
-import React from "react";
-
-function ProductList({ product }) {
+import React, { useContext } from "react";
+import { ProductContext } from "../MyContext";
+function ProductList() {
+  const msg = useContext(ProductContext);
   return (
     <div className="ProductList__list">
-      <img src={product.img} alt={product.name} width="150" />
+      {msg}
+      {/* <button onClick={() => setBooks(true)}>click</button> */}
     </div>
   );
 }
