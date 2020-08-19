@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import PageTitle from "../components/PageTitle";
-import products from "../data.js";
+import { ProductContext } from "../MyContext";
 
 function Product() {
-  console.log(products);
+  const books = useContext(ProductContext);
+  const { getSingleBook } = context;
+  const book = getSingleBook(books.slug);
+
   return (
     <div>
       <PageTitle title="product" />

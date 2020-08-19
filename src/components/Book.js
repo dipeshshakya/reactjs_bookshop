@@ -4,6 +4,7 @@ import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import ButtonBase from "@material-ui/core/ButtonBase";
 import { makeStyles } from "@material-ui/core/styles";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -29,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 function Book({ book }) {
   const classes = useStyles();
-  const { id, name, author, img, description, price } = book;
+  const { id, name, author, img, description, price, slug } = book;
   return (
     <div className={classes.root}>
       <Paper className={classes.paper}>
@@ -52,7 +53,7 @@ function Book({ book }) {
               </Grid>
               <Grid item>
                 <Typography variant="body2" style={{ cursor: "pointer" }}>
-                  Learn more
+                  <Link to={`/book/${slug}`}> Learn more</Link>
                 </Typography>
               </Grid>
             </Grid>
