@@ -1,11 +1,17 @@
 import React, { useContext } from "react";
 import { ProductContext } from "../MyContext";
+import Book from "./Book";
+// import data from "../data.js";
+
 function ProductList() {
-  const msg = useContext(ProductContext);
+  const books = useContext(ProductContext);
+
+  // console.log(books);
   return (
     <div className="ProductList__list">
-      {msg}
-      {/* <button onClick={() => setBooks(true)}>click</button> */}
+      {books.map((item) => {
+        return <Book book={item} key={item.id} />;
+      })}
     </div>
   );
 }
