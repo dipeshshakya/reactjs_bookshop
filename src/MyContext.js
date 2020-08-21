@@ -16,38 +16,44 @@ export const ProviderContext = (props) => {
   useEffect(() => {
     let books = products;
     let maxPrice = Math.max(...books.map((item) => item.price));
-    console.log(maxPrice);
     setState({
+      ...state,
       books: books,
-      maxPrice,
+      maxPrice: maxPrice,
       sortedBook: books,
       loading: false,
       price: maxPrice,
     });
   }, []);
+
   const handleChange = (event) => {
     const target = event.target;
-    const value = target.value;
     const name = target.name;
-    setState({
-      [name]: value,
-    });
-    filterBooks();
+    const value = target.value;
+    setState(
+      {
+        ...state,
+        [name]: value,
+      },
+      filterBooks()
+    );
   };
   const filterBooks = () => {
     let { books, maxPrice, minPrice, type, category, price } = state;
     let tempBook = [...books];
     price = parseInt(price);
-    console.log(tempBook, price);
-    if (type != "all") {
+    // console.log(typeof price);
+    // console.log(tempBook, price);
+    if (type !== "all") {
       tempBook = tempBook.filter((book) => book.type === type);
     }
     tempBook = tempBook.filter((book) => book.price < price);
 
     setState({
+      ...state,
       sortedBook: tempBook,
     });
-    console.log(state);
+    // console.log(state);
   };
   return (
     <ProductContext.Provider value={{ state, handleChange }}>

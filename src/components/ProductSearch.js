@@ -3,15 +3,10 @@ import { ProductContext } from "../MyContext";
 
 function ProductSearch({ books }) {
   const contextValue = useContext(ProductContext);
-  const {
-    type,
-    category,
-    price,
-    maxPrice,
-    minPrice,
-    handleChange,
-  } = contextValue;
-  console.log("from produtsearch", contextValue);
+  const { state, handleChange } = contextValue;
+
+  const { maxPrice, minPrice, type, category, price } = state;
+
   return (
     <div className="productSearch__wrapper">
       <form action="">
