@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
-import { ProductContext } from "../MyContext";
+// import { ProductContext } from "../MyContext";
 import Book from "./Book";
 import Grid from "@material-ui/core/Grid";
 
 // import data from "../data.js";
 
-function ProductList() {
-  const books = useContext(ProductContext);
-
+function ProductList({ books }) {
+  // const { books } = useContext(ProductContext);
+  // console.log("from shop", books);
   return (
     <div className="ProductList__list">
       {books.map((item) => {

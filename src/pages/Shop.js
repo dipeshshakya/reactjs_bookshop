@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ProductContext } from "../MyContext";
 import PageTitle from "../components/PageTitle";
 import ProductSearch from "../components/ProductSearch";
 import ProductList from "../components/ProductList";
 // import products from "../data.js";
 import Grid from "@material-ui/core/Grid";
+import Loading from "../components/Loading";
 
 function Shop() {
+  const { loading, books, sortedBook } = useContext(ProductContext);
+  if (loading) {
+    return <Loading />;
+  }
   return (
     <>
       <div>
@@ -13,12 +19,12 @@ function Shop() {
       </div>
       <Grid container>
         <Grid item xs>
-          <ProductSearch />
+          <ProductSearch books={books} />
         </Grid>
         <Grid item xs={8}>
           <div className="productList__wrapper">
             <Grid container>
-              <ProductList />
+              <ProductList books={sortedBook} />
             </Grid>
           </div>
         </Grid>

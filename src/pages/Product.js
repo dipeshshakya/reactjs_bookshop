@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
 function Product(props) {
   const classes = useStyles();
 
-  const books = useContext(ProductContext);
+  const { books } = useContext(ProductContext);
   // const { getSingleBook } = context;
   // const book = getSingleBook(books.slug);
 

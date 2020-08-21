@@ -1,6 +1,6 @@
 import React from "react";
 
-function ProductSearch() {
+function ProductSearch({ books }) {
   return (
     <div className="productSearch__wrapper">
       {/* <form action="">
