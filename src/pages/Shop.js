@@ -8,7 +8,8 @@ import Grid from "@material-ui/core/Grid";
 import Loading from "../components/Loading";
 
 function Shop() {
-  const { loading, books, sortedBook } = useContext(ProductContext);
+  const { state } = useContext(ProductContext);
+  const { loading, books, sortedBook } = state;
   if (loading) {
     return <Loading />;
   }

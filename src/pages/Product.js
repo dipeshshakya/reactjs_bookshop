@@ -17,15 +17,15 @@ const useStyles = makeStyles((theme) => ({
 function Product(props) {
   const classes = useStyles();
 
-  const { books } = useContext(ProductContext);
+  const { state } = useContext(ProductContext);
+  const { books } = state;
   // const { getSingleBook } = context;
   // const book = getSingleBook(books.slug);
 
   const slug = props.match.params.slug;
 
   const book = books.find((b) => b.slug === slug);
-  const { id, name, author, description, img, price, inCart, category, type } =
-    book || {};
+  const { name, author, description, img, price, category, type } = book || {};
   if (!book) {
     return <PageTitle title=" Sorry not found " />;
   }

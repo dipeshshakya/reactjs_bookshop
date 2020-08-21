@@ -11,6 +11,7 @@ export const ProviderContext = (props) => {
     category: "all",
     loading: true,
     sortedBook: [],
+    price: 0,
   });
   useEffect(() => {
     let books = products;
@@ -24,15 +25,32 @@ export const ProviderContext = (props) => {
       price: maxPrice,
     });
   }, []);
-  // console.log(state);
+  const handleChange = (event) => {
+    const target = event.target;
+    const value = target.value;
+    const name = target.name;
+    setState({
+      [name]: value,
+    });
+    filterBooks();
+  };
+  const filterBooks = () => {
+    let { books, maxPrice, minPrice, type, category, price } = state;
+    let tempBook = [...books];
+    price = parseInt(price);
+    console.log(tempBook, price);
+    if (type != "all") {
+      tempBook = tempBook.filter((book) => book.type === type);
+    }
+    tempBook = tempBook.filter((book) => book.price < price);
 
-  // const getSingleBook = (slug) => {
-  //   let tempBook = books;
-  //   const bookFound = tempBook.find((book) => book.slug === slug);
-  //   return bookFound;
-  // };
+    setState({
+      sortedBook: tempBook,
+    });
+    console.log(state);
+  };
   return (
-    <ProductContext.Provider value={state}>
+    <ProductContext.Provider value={{ state, handleChange }}>
       {props.children}
     </ProductContext.Provider>
   );

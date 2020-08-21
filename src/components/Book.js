@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 function Book({ book }) {
   const classes = useStyles();
-  const { id, name, author, img, description, price, slug } = book;
+  const { id, name, author, img, price, slug } = book;
   return (
     <div className={classes.root}>
       <Paper className={classes.paper} id={id}>
