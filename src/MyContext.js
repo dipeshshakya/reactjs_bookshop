@@ -13,6 +13,8 @@ export const ProviderContext = (props) => {
     sortedBook: [],
     price: 0,
   });
+  const [flag, setFlag] = useState(false);
+
   useEffect(() => {
     let books = products;
     let maxPrice = Math.max(...books.map((item) => item.price));
@@ -30,31 +32,41 @@ export const ProviderContext = (props) => {
     const target = event.target;
     const name = target.name;
     const value = target.value;
-    setState(
-      {
-        ...state,
-        [name]: value,
-      },
-      filterBooks()
-    );
-  };
-  const filterBooks = () => {
-    let { books, maxPrice, minPrice, type, category, price } = state;
-    let tempBook = [...books];
-    price = parseInt(price);
-    // console.log(typeof price);
-    // console.log(tempBook, price);
-    if (type !== "all") {
-      tempBook = tempBook.filter((book) => book.type === type);
-    }
-    tempBook = tempBook.filter((book) => book.price < price);
+    setFlag(false);
 
     setState({
       ...state,
-      sortedBook: tempBook,
+      [name]: value,
+      sortedBook: [],
     });
-    // console.log(state);
+    setFlag(true);
   };
+
+  useEffect(() => {
+    if (!flag) {
+      // console.log("effect called without change - by default");
+    } else {
+      // console.log("effect called with change ");
+      const filterBooks = () => {
+        let { books, maxPrice, minPrice, type, category, price } = state;
+        let tempBook = [...books];
+
+        if (type !== "all") {
+          tempBook = tempBook.filter((book) => book.type === type);
+        }
+        tempBook = tempBook.filter((book) => book.price < parseInt(price));
+        // console.log("from tempbook", tempBook);
+        setState({
+          ...state,
+          sortedBook: tempBook,
+        });
+      };
+
+      filterBooks();
+    }
+    // console.log(state);
+  }, [state.price, flag]);
+
   return (
     <ProductContext.Provider value={{ state, handleChange }}>
       {props.children}
