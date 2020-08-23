@@ -54,6 +54,9 @@ export const ProviderContext = (props) => {
         if (type !== "all") {
           tempBook = tempBook.filter((book) => book.type === type);
         }
+        if (category !== "all") {
+          tempBook = tempBook.filter((book) => book.category === category);
+        }
         tempBook = tempBook.filter((book) => book.price < parseInt(price));
         // console.log("from tempbook", tempBook);
         setState({
@@ -65,7 +68,7 @@ export const ProviderContext = (props) => {
       filterBooks();
     }
     // console.log(state);
-  }, [state.price, flag]);
+  }, [state.price, state.type, state.category, flag]);
 
   return (
     <ProductContext.Provider value={{ state, handleChange }}>

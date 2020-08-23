@@ -7,13 +7,41 @@ function ProductSearch({ books }) {
 
   const { maxPrice, minPrice, type, category, price } = state;
 
+  const getUnique = (items, value) => {
+    return [...new Set(items.map((item) => item[value]))];
+  };
+
+  let types = getUnique(books, "type");
+  types = ["all", ...types];
+  types = types.map((item, index) => {
+    return (
+      <option value={item} key={index}>
+        {item}
+      </option>
+    );
+  });
+
+  let categories = getUnique(books, "category");
+  categories = ["all", ...categories];
+
+  categories = categories.map((item, index) => {
+    return (
+      <option value={item} key={index}>
+        {item}
+      </option>
+    );
+  });
   return (
     <div className="productSearch__wrapper">
       <form action="">
         <input type="text" placeholder="Keyword,author,title" />
-        <select name="" id="">
-          <option>category1</option>
-          <option>category2</option>
+        <select
+          name="category"
+          id="category"
+          onChange={handleChange}
+          value={category}
+        >
+          {categories}
         </select>
         <input
           type="range"
@@ -24,9 +52,8 @@ function ProductSearch({ books }) {
           value={price}
           onChange={handleChange}
         />
-        <select name="" id="">
-          <option>category1</option>
-          <option>category2</option>
+        <select name="type" id="type" onChange={handleChange} value={type}>
+          {types}
         </select>
       </form>
     </div>

@@ -2,12 +2,12 @@ import React from "react";
 // import { ProductContext } from "../MyContext";
 import Book from "./Book";
 import Grid from "@material-ui/core/Grid";
-
-// import data from "../data.js";
+import Loading from "../components/Loading";
 
 function ProductList({ books }) {
-  // const { books } = useContext(ProductContext);
-  // console.log("from shop", books);
+  if (!books) {
+    return <Loading />;
+  }
   return (
     <div className="ProductList__list">
       {books.map((item) => {

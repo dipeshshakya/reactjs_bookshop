@@ -5,14 +5,11 @@ import ProductSearch from "../components/ProductSearch";
 import ProductList from "../components/ProductList";
 // import products from "../data.js";
 import Grid from "@material-ui/core/Grid";
-import Loading from "../components/Loading";
 
 function Shop() {
   const { state } = useContext(ProductContext);
   const { loading, books, sortedBook } = state;
-  if (loading) {
-    return <Loading />;
-  }
+  
   return (
     <>
       <div>
