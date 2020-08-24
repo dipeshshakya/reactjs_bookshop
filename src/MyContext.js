@@ -14,6 +14,7 @@ export const ProviderContext = (props) => {
     price: 0,
   });
   const [flag, setFlag] = useState(false);
+  const [cart, setCart] = useState([]);
 
   useEffect(() => {
     let books = products;
@@ -70,8 +71,15 @@ export const ProviderContext = (props) => {
     // console.log(state);
   }, [state.price, state.type, state.category, flag]);
 
+  const addToCart = (e) => {
+    e.preventDefault();
+    // console.log("cart click", e.currentTarget.id);
+    setCart((cart) => [...cart, e.currentTarget.id]);
+    e.currentTarget.setAttribute("disable", "disable");
+  };
+
   return (
-    <ProductContext.Provider value={{ state, handleChange }}>
+    <ProductContext.Provider value={{ state, handleChange, addToCart, cart }}>
       {props.children}
     </ProductContext.Provider>
   );
