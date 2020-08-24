@@ -40,7 +40,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 function Book({ book }) {
   const { addToCart } = useContext(ProductContext);
-
   const classes = useStyles();
   const { id, name, author, img, price, slug } = book;
   return (

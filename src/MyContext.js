@@ -74,10 +74,11 @@ export const ProviderContext = (props) => {
   const addToCart = (e) => {
     e.preventDefault();
     // console.log("cart click", e.currentTarget.id);
-    setCart((cart) => [...cart, e.currentTarget.id]);
+    let id = e.currentTarget.id;
+
+    setCart({ [id]: 1 });
     e.currentTarget.setAttribute("disable", "disable");
   };
-
   return (
     <ProductContext.Provider value={{ state, handleChange, addToCart, cart }}>
       {props.children}

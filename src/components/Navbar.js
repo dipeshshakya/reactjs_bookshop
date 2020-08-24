@@ -11,6 +11,7 @@ function Navbar() {
           <Link to="/Shop">Shop</Link>
           <Link to="/Checkout">Checkout</Link>
           <Link to="/Book:slug">Product</Link>
+          <Link to="cart"> My cart </Link>
         </Toolbar>
       </AppBar>
     </div>

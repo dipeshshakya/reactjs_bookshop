@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Shop from "./pages/Shop";
 import Product from "./pages/Product";
 import Checkout from "./pages/Checkout";
+import Cart from "./pages/Cart";
 import Navbar from "./components/Navbar";
 import { ProviderContext } from "./MyContext";
 function App() {
@@ -18,6 +19,7 @@ function App() {
           {/* <Route exact path="/Product" component={Product} /> */}
           <Route exact path="/Checkout" component={Checkout} />
           <Route exact path="/Book/:slug" component={Product} />
+          <Route exact path="/cart" component={Cart} />
         </Switch>
       </ProviderContext>
     </div>
